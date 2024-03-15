@@ -1,5 +1,5 @@
 # Lessons for DryDock of Keel
 
-## With Galley
+## Chapter I: With Galley
 
-* [Startup with Katori](src/main/java/io/github/sinri/drydock/lesson/galley/README.md)
+1. [Startup with Katori](src/main/java/io/github/sinri/drydock/lesson/galley/README.md)
