@@ -1,5 +1,6 @@
 package io.github.sinri.drydock.lesson.destroyer.queue;
 
+import io.github.sinri.keel.facade.async.KeelAsyncKit;
 import io.vertx.core.Future;
 
 import javax.annotation.Nonnull;
@@ -28,6 +29,10 @@ public class KirisimaManualTask extends KirisimaQueueTask {
     @Override
     protected Future<Void> run() {
         getIssueRecorder().info("In this task, v is +" + v);
-        return Future.succeededFuture();
+        return KeelAsyncKit.sleep((long) (10_000L * v))
+                .compose(v -> {
+                    getIssueRecorder().info("finished task");
+                    return Future.succeededFuture();
+                });
     }
 }

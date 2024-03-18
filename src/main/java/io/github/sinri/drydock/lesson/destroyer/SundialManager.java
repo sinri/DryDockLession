@@ -12,6 +12,17 @@ public class SundialManager {
         Collection<KeelSundialPlan> sundialPlans = new ArrayList<>();
         ByMinuteSundialPlan byMinuteSundialPlan = new ByMinuteSundialPlan();
         sundialPlans.add(byMinuteSundialPlan);
+
+        var xxx = Kirisima.getIssueRecordCenterOfKirisima().generateIssueRecorderForEventLogger("xxx");
+        xxx.info("aaa");
+        System.out.println("xxx " + xxx.getVisibleLevel()
+                + " adapter " + xxx.issueRecordCenter().getAdapter()
+                + " closed " + xxx.issueRecordCenter().getAdapter().isClosed()
+                + " stopped " + xxx.issueRecordCenter().getAdapter().isStopped()
+        );
+
+
+
         return Future.succeededFuture(sundialPlans);
     }
 }

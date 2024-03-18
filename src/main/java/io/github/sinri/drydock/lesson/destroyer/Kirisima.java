@@ -31,7 +31,7 @@ public class Kirisima extends Destroyer {
 
     @Override
     protected Future<Void> launchAsDestroyer() {
-        return null;
+        return Future.succeededFuture();
     }
 
     @Override
@@ -63,5 +63,10 @@ public class Kirisima extends Destroyer {
     protected Future<Void> prepareDataSources() {
         sundialManager = new SundialManager();
         return Future.succeededFuture();
+    }
+
+    @Override
+    public int configuredQueueWorkerPoolSize() {
+        return 2;
     }
 }
