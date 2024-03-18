@@ -33,8 +33,7 @@ public class Yubari extends Caravel {
     @Override
     protected Future<Void> prepareDataSources() {
         dataSource = KeelMySQLDataSourceProvider.initializeNamedMySQLDataSource(YubariMySQLConnection.dataSourceName, YubariMySQLConnection::new);
-        return KeelAsyncKit.sleep(1_000L);
-        //return Future.succeededFuture();
+        return Future.succeededFuture();
     }
 
     @Override

@@ -163,7 +163,7 @@ Thread类的sleep方法会使当前线程陷入睡眠，这在event loop下是�
 
 ## 运行输出示例
 
-    C:\Users\ljni\.jdks\temurin-17.0.9\bin\java.exe "-javaagent:C:\Users\ljni\AppData\Local\Programs\IntelliJ IDEA Community Edition\lib\idea_rt.jar=51290:C:\Users\ljni\AppData\Local\Programs\IntelliJ IDEA Community Edition\bin" -Dfile.encoding=UTF-8 -classpath E:\sinri\DryDockLession\target\classes;C:\Users\ljni\.m2\repository\io\github\sinri\DryDock\1.4.2\DryDock-1.4.2.jar io.github.sinri.drydock.lesson.galley.Katori
+    C:\Users\aaaa\.jdks\temurin-17.0.9\bin\java.exe "-javaagent:C:\Users\aaaa\AppData\Local\Programs\IntelliJ IDEA Community Edition\lib\idea_rt.jar=51290:C:\Users\aaaa\AppData\Local\Programs\IntelliJ IDEA Community Edition\bin" -Dfile.encoding=UTF-8 -classpath E:\sinri\DryDockLession\target\classes;C:\Users\aaaa\.m2\repository\io\github\sinri\DryDock\1.4.2\DryDock-1.4.2.jar io.github.sinri.drydock.lesson.galley.Katori
     Cannot find the file config.properties. Use the embedded one.
     ㏒ 2024-03-15 13:57:07.259 [INFO] DryDock()
      ▪ message: LOCAL CONFIG LOADED (if any)
