@@ -1,9 +1,11 @@
 package io.github.sinri.drydock.lesson.ironclad;
 
 import io.github.sinri.drydock.naval.melee.Ironclad;
+import io.github.sinri.keel.helper.KeelHelpersInterface;
 import io.github.sinri.keel.mysql.KeelMySQLDataSourceProvider;
 import io.github.sinri.keel.mysql.NamedMySQLDataSource;
 import io.vertx.core.Future;
+import io.vertx.core.json.JsonArray;
 import io.vertx.ext.web.Router;
 
 import javax.annotation.Nonnull;
@@ -31,6 +33,14 @@ public class Murasame extends Ironclad {
 
     @Override
     public void configureHttpServerRoutes(Router router) {
+        router.get("/").handler(routingContext -> {
+            JsonArray names = new JsonArray();
+            for (String name : routingContext.queryParam("name")) {
+                names.add(name);
+            }
+            String namesJoined = KeelHelpersInterface.KeelHelpers.stringHelper().joinStringArray(names, " and ");
+            routingContext.end("Hello " + namesJoined + "!");
+        });
         // todo
     }
 
