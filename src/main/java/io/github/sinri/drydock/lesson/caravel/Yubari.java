@@ -7,6 +7,8 @@ import io.github.sinri.keel.mysql.NamedMySQLDataSource;
 import io.github.sinri.keel.mysql.exception.KeelSQLResultRowIndexError;
 import io.github.sinri.keel.mysql.statement.AnyStatement;
 import io.vertx.core.Future;
+import io.vertx.core.VertxOptions;
+import io.vertx.core.dns.AddressResolverOptions;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.client.WebClient;
 
@@ -18,13 +20,19 @@ import static io.github.sinri.keel.facade.KeelInstance.Keel;
 public class Yubari extends Caravel {
     private NamedMySQLDataSource<YubariMySQLConnection> dataSource;
 
+    /**
+     * Override here is for windows under internal device monitoring.
+     */
+    @Override
+    public VertxOptions buildVertxOptions() {
+        return super.buildVertxOptions()
+                .setAddressResolverOptions(new AddressResolverOptions().addServer("223.5.5.5"));
+    }
 
     @Nonnull
     @Override
     protected Future<Void> prepareDataSources() {
         dataSource = KeelMySQLDataSourceProvider.initializeNamedMySQLDataSource(YubariMySQLConnection.dataSourceName, YubariMySQLConnection::new);
-        getLogger().info("yubari mysql config", dataSource.getConfiguration().toJsonObject());
-        getLogger().info("ver: " + dataSource.getFullVersionRef());
         return KeelAsyncKit.sleep(1_000L);
         //return Future.succeededFuture();
     }
@@ -44,6 +52,7 @@ public class Yubari extends Caravel {
                                         getLogger().info("r: " + r);
                                         if (r > 0.8) {
                                             getLogger().notice("Finally!");
+                                            routineResult.stop();
                                             return Future.succeededFuture();
                                         } else {
                                             return KeelAsyncKit.sleep(1_000L);
