@@ -4,11 +4,11 @@ import io.vertx.core.Future;
 
 import javax.annotation.Nonnull;
 
-public class KirisimaRandomTask extends KirisimaQueueTask {
+public class KirisimaManualTask extends KirisimaQueueTask {
     private final long taskRef;
     private final float v;
 
-    public KirisimaRandomTask(long taskRef, float v) {
+    public KirisimaManualTask(long taskRef, float v) {
         this.taskRef = taskRef;
         this.v = v;
     }
@@ -27,7 +27,7 @@ public class KirisimaRandomTask extends KirisimaQueueTask {
 
     @Override
     protected Future<Void> run() {
-        getIssueRecorder().info("v is +" + v);
+        getIssueRecorder().info("In this task, v is +" + v);
         return Future.succeededFuture();
     }
 }

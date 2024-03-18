@@ -1,5 +1,6 @@
 package io.github.sinri.drydock.lesson.destroyer.receptionist;
 
+import io.github.sinri.drydock.lesson.destroyer.Kirisima;
 import io.github.sinri.keel.logger.issue.center.KeelIssueRecordCenter;
 import io.github.sinri.keel.web.http.receptionist.KeelWebFutureReceptionist;
 import io.vertx.ext.web.RoutingContext;
@@ -16,6 +17,6 @@ public abstract class KirisimaReceptionist extends KeelWebFutureReceptionist {
     @Nonnull
     @Override
     protected KeelIssueRecordCenter issueRecordCenter() {
-        return null;
+        return Kirisima.getIssueRecordCenterOfKirisima();
     }
 }

@@ -50,7 +50,7 @@ public class Kirisima extends Destroyer {
 
     @Override
     public KeelQueueNextTaskSeeker buildQueueNextTaskSeeker() {
-        return new QueueManager();
+        return QueueManager.instance;
     }
 
     @Override
