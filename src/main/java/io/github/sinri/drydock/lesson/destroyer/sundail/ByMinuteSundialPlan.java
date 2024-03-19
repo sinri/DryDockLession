@@ -1,5 +1,6 @@
 package io.github.sinri.drydock.lesson.destroyer.sundail;
 
+import io.github.sinri.drydock.lesson.destroyer.QueueManager;
 import io.github.sinri.keel.core.KeelCronExpression;
 
 import java.util.Calendar;
@@ -13,6 +14,6 @@ public class ByMinuteSundialPlan extends KirisimaSundialPlan {
 
     @Override
     public void execute(Calendar calendar) {
-        getLogger().info("execute on " + calendar.toString());
+        getLogger().info("Now, " + QueueManager.currentTasksInQueue() + " tasks pending in queue.");
     }
 }

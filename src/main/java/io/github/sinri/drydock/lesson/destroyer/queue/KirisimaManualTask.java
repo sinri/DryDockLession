@@ -28,7 +28,7 @@ public class KirisimaManualTask extends KirisimaQueueTask {
 
     @Override
     protected Future<Void> run() {
-        getIssueRecorder().info("In this task, v is +" + v);
+        getIssueRecorder().info("This task would spend about " + (v * 10) + " seconds.");
         return KeelAsyncKit.sleep((long) (10_000L * v))
                 .compose(v -> {
                     getIssueRecorder().info("finished task");

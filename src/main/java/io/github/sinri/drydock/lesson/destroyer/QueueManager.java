@@ -30,4 +30,8 @@ public class QueueManager implements KeelQueueNextTaskSeeker {
         @Nullable KirisimaManualTask task = tasks.poll();
         return Future.succeededFuture(task);
     }
+
+    public static int currentTasksInQueue() {
+        return instance.tasks.size();
+    }
 }
