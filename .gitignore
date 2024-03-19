@@ -37,6 +37,7 @@ build/
 ### Mac OS ###
 .DS_Store
 
-src/test/java/io/github/sinri/emailboxorganizator/test/debug
+.idea/
+
+src/main/resources/config.properties
 src/test/resources/config.properties
-src/test/resources/runtime/
