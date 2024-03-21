@@ -1,4 +1,4 @@
-package io.github.sinri.drydock.lesson.test.kirisima;
+package io.github.sinri.drydock.lesson.test.chapter_one.kirisima;
 
 import io.github.sinri.drydock.naval.raider.Privateer;
 import io.github.sinri.keel.facade.async.FutureForRange;

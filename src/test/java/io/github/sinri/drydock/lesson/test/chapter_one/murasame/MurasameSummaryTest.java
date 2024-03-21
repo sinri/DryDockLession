@@ -1,4 +1,4 @@
-package io.github.sinri.drydock.lesson.test.murasame;
+package io.github.sinri.drydock.lesson.test.chapter_one.murasame;
 
 import io.github.sinri.drydock.naval.raider.Privateer;
 import io.github.sinri.keel.tesuto.TestUnit;
