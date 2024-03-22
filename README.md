@@ -11,3 +11,5 @@
 ## Chapter II: Weapon by weapon
 
 1. [Logging](src/main/java/io/github/sinri/drydock/lesson/chapter_two/logging/README.md)
+2. [MySQL, Part I](src/main/java/io/github/sinri/drydock/lesson/chapter_two/mysql/README.md)
+3. [MySQL, Part II](src/main/java/io/github/sinri/drydock/lesson/chapter_two/mysql/actions/README.md)
