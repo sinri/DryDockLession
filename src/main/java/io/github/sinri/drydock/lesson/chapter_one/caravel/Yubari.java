@@ -84,9 +84,9 @@ public class Yubari extends Caravel {
                     JsonObject jsonObject = bufferHttpResponse.bodyAsJsonObject();
                     String hello = jsonObject.getString("hello");
                     Keel.getConfiguration()
-                            .putAll(new JsonObject()
-                                    .put("yubari", new JsonObject()
-                                            .put("hello", hello)));
+                            .ensureChild("yubari")
+                            .ensureChild("hello")
+                            .setValue(hello);
                     return Future.succeededFuture();
                 });
     }
